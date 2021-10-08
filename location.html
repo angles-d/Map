@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>AR.js Basic Projected Camera Example</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    </head>
+    <body>
+    <a-scene
+        vr-mode-ui="enabled: false"
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
+        renderer='antialias: true; alpha: true'>
+            <a-camera id = "gps" gps-projected-camera rotation-reader></a-camera>
+            <a-box gps-projected-entity-place='latitude: 33.780520; longitude: -84.388930' material='color: blue' scale='10 10 10'>
+            </a-box>
+            <a-text
+                value="UHM"
+                scale="10 10 10"
+                position = " 0 3 0"
+                gps-entity-place="latitude: 33.780520; longitude: -84.388930;"></a-text>
+            
+            <a-box gps-projected-entity-place='latitude: 33.786442; longitude: -84.388390' material='color: green' scale='10 10 10'>
+                <a-text
+                value="Whole Foods"
+                scale="10 10 10"
+                ></a-text>
+            </a-box> 
+            <a-box gps-projected-entity-place='latitude: 33.791600; longitude: -84.393670' material='color: red' scale='10 10 10'>
+                <a-text
+                color = "red"
+                value="Wells Fargo"
+                scale="10 10 10"
+                ></a-text>
+            </a-box> 
+            <a-box gps-projected-entity-place='latitude: 33.791600; longitude: -84.393670' material='color: orange' scale='10 10 10'>
+                <a-text
+                color = "white"
+                value="Tech Tower"
+                scale="10 10 10"
+                ></a-text>
+            </a-box> 
+            
+        </a-scene>
+    </body>
+</html>
